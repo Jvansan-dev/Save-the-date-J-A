@@ -606,6 +606,15 @@
       box-shadow: 0 18px 40px rgba(60, 50, 20, .08)
     }
 
+    .details-note {
+      margin-top: 22px;
+      font-size: 14px;
+      letter-spacing: .04em;
+      font-style: italic;
+      font-family: 'Fraunces', serif;
+      color: var(--terra-600);
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr)
@@ -706,6 +715,30 @@
     .btn:hover {
       background: var(--olive-800);
       color: #fff
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .actions .btn {
+      margin-top: 0;
+    }
+
+    .btn-solid {
+      background: var(--terra-600);
+      border-color: var(--terra-600);
+      color: #fff;
+    }
+
+    .btn-solid:hover {
+      background: var(--terra-700);
+      border-color: var(--terra-700);
+      color: #fff;
     }
 
     /* ================= COUNTDOWN ================= */
@@ -1303,9 +1336,16 @@
       <div class="card">
         <div class="grid">
           <div class="cell"><span class="label">Data</span><strong>21 de abril<br>2027</strong></div>
-          <div class="cell"><span class="label">Início</span><strong>16h</strong></div>
-          <div class="cell"><span class="label">Traje</span><strong>Esporte fino<br>social completo</strong></div>
+          <div class="cell"><span class="label">Horário</span><strong>16h às 23h</strong></div>
+          <div class="cell"><span class="label">Traje</span><strong>Esporte fino /<br>Social completo</strong></div>
         </div>
+      </div>
+      <p class="details-note">Convite oficial em breve.</p>
+      <div class="actions">
+        <a class="btn btn-solid" target="_blank" rel="noopener"
+          href="https://wa.me/5544999640402?text=Ol%C3%A1!%20Gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20casamento%20de%20Jo%C3%A3o%20Victor%20e%20Ana%20Carolina%20%F0%9F%8E%89">Confirmar
+          presença</a>
+        <a class="btn" href="convite.ics" download="Casamento-Joao-e-Ana.ics">Adicionar ao calendário</a>
       </div>
     </div>
   </section>
@@ -1359,7 +1399,7 @@
       <div class="rule-bloom"><span></span><svg viewBox="0 0 100 100">
           <use href="#blossom" fill="currentColor" />
         </svg><span></span></div>
-      <p class="recap">21 de abril de 2027 · 16h<br>Vila Campestre · Maringá/PR</p>
+      <p class="recap">21 de abril de 2027 · 16h às 23h<br>Vila Campestre · Maringá/PR</p>
       <span class="final-names">com carinho, João Victor e Ana Carolina</span>
     </div>
   </section>
