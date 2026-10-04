@@ -1203,6 +1203,49 @@
         top: 75%;
       }
     }
+
+    /* ================= GALERIA (fotos lado a lado, rolando devagar) ================= */
+    .story > .page { padding-bottom: 0 }
+
+    .gallery {
+      margin: 40px 0 0;
+      width: 100%;
+      overflow: hidden;
+      padding: 26px 0 40px;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+    }
+
+    .gallery-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: galleryScroll 90s linear infinite;
+      will-change: transform;
+    }
+
+    .gallery figure {
+      flex: 0 0 auto;
+      margin: 0 28px 0 0;
+      padding: 10px 10px 26px;
+      background: #fff;
+      box-shadow: 0 16px 36px rgba(50, 45, 25, .16);
+    }
+
+    .gallery figure:nth-child(odd) { transform: rotate(-1.2deg) }
+    .gallery figure:nth-child(even) { transform: rotate(1deg) }
+
+    .gallery img {
+      display: block;
+      height: clamp(210px, 62vw, 300px);
+      width: auto;
+      border: 1px solid #efe6d2;
+    }
+
+    @keyframes galleryScroll {
+      from { transform: translateX(0) }
+      to { transform: translateX(-50%) }
+    }
   </style>
 </head>
 
@@ -1310,6 +1353,22 @@
         <figcaption>Nossa história, em aquarela.</figcaption>
       </figure>
     </div>
+    <div class="gallery">
+      <div class="gallery-track">
+        <figure><img src="fotos/foto1.jpg" alt="João Victor e Ana Carolina juntos, com buquê de girassóis" decoding="async"></figure>
+        <figure><img src="fotos/foto2.jpg" alt="João Victor e Ana Carolina na praia" decoding="async"></figure>
+        <figure><img src="fotos/foto3.jpg" alt="João Victor e Ana Carolina em um gramado perto da praia" decoding="async"></figure>
+        <figure><img src="fotos/foto4.jpg" alt="João Victor e Ana Carolina em frente à igreja" decoding="async"></figure>
+        <figure><img src="fotos/foto5.jpg" alt="João Victor e Ana Carolina em casa" decoding="async"></figure>
+        <figure><img src="fotos/foto6.jpg" alt="Ana Carolina com João Victor fardado" decoding="async"></figure>
+        <figure aria-hidden="true"><img src="fotos/foto1.jpg" alt="" decoding="async"></figure>
+        <figure aria-hidden="true"><img src="fotos/foto2.jpg" alt="" decoding="async"></figure>
+        <figure aria-hidden="true"><img src="fotos/foto3.jpg" alt="" decoding="async"></figure>
+        <figure aria-hidden="true"><img src="fotos/foto4.jpg" alt="" decoding="async"></figure>
+        <figure aria-hidden="true"><img src="fotos/foto5.jpg" alt="" decoding="async"></figure>
+        <figure aria-hidden="true"><img src="fotos/foto6.jpg" alt="" decoding="async"></figure>
+      </div>
+    </div>
   </section>
 
   <!-- ================= VERSE ================= -->
@@ -1336,16 +1395,13 @@
       <div class="card">
         <div class="grid">
           <div class="cell"><span class="label">Data</span><strong>21 de abril<br>2027</strong></div>
-          <div class="cell"><span class="label">Horário</span><strong>16h às 23h</strong></div>
+          <div class="cell"><span class="label">Horário</span><strong>Estar no local<br>às 10h30<br>Início às 11h</strong></div>
           <div class="cell"><span class="label">Traje</span><strong>Esporte fino /<br>Social completo</strong></div>
         </div>
       </div>
       <p class="details-note">Convite oficial em breve.</p>
       <div class="actions">
-        <a class="btn btn-solid" target="_blank" rel="noopener"
-          href="https://wa.me/5544999640402?text=Ol%C3%A1!%20Gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20casamento%20de%20Jo%C3%A3o%20Victor%20e%20Ana%20Carolina%20%F0%9F%8E%89">Confirmar
-          presença</a>
-        <a class="btn" href="convite.ics" download="Casamento-Joao-e-Ana.ics">Adicionar ao calendário</a>
+        <a class="btn btn-solid" href="convite.ics" download="Casamento-Joao-e-Ana.ics">Adicionar ao calendário</a>
       </div>
     </div>
   </section>
@@ -1399,7 +1455,7 @@
       <div class="rule-bloom"><span></span><svg viewBox="0 0 100 100">
           <use href="#blossom" fill="currentColor" />
         </svg><span></span></div>
-      <p class="recap">21 de abril de 2027 · 16h às 23h<br>Vila Campestre · Maringá/PR</p>
+      <p class="recap">21 de abril de 2027 · Início às 11h<br>Vila Campestre · Maringá/PR</p>
       <span class="final-names">com carinho, João Victor e Ana Carolina</span>
     </div>
   </section>
@@ -1412,7 +1468,7 @@
     document.querySelectorAll('.fade').forEach(e => observer.observe(e));
 
     // countdown
-    const target = new Date('2027-04-21T16:00:00-03:00').getTime();
+    const target = new Date('2027-04-21T11:00:00-03:00').getTime();
     function tick() {
       let x = Math.max(0, target - Date.now());
       const d = Math.floor(x / 86400000); x %= 86400000;

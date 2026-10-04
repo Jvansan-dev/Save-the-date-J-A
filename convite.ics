@@ -6,10 +6,9 @@ METHOD:PUBLISH
 BEGIN:VEVENT
 UID:joaovictor-anacarolina-2027-04-21@savethedate
 DTSTAMP:20260913T000000Z
-DTSTART:20270421T190000Z
-DTEND:20270422T020000Z
+DTSTART:20270421T140000Z
 SUMMARY:Casamento de João Victor & Ana Carolina
-DESCRIPTION:Esperamos você para celebrar esse momento especial com a gente. Convite oficial em breve.
+DESCRIPTION:Estar no local às 10h30 - início às 11h. Esperamos você para celebrar esse momento especial com a gente. Convite oficial em breve.
 LOCATION:Vila Campestre - Av. Pref. Sincler Sambatti\, 8909\, Jardim Bertioga\, Maringá/PR
 STATUS:CONFIRMED
 END:VEVENT
